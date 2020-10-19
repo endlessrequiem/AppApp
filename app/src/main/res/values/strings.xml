@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Application Tracker</string>
+
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <string name="action_delete_all_entries">Delete All</string>
+
+    <string name="empty_view_title_text">Let\'s Get Started</string>
+
+    <string name="empty_view_subtitle_text">Add some jobs you\'ve applied to</string>
+
+    <string name="editor_activity_title_add_app">Add an Application</string>
+
+    <string name="editor_activity_title_edit_app">Edit Application</string>
+
+    <string name="action_save">Save</string>
+
+    <string name="action_delete">Delete</string>
+
+    <string name="editor_insert_pet_successful">Application saved</string>
+
+    <string name="editor_insert_pet_failed">Error with saving application</string>
+
+    <string name="editor_update_pet_successful">Application updated</string>
+
+    <string name="editor_update_pet_failed">Error with updating application</string>
+
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <string name="discard">Discard</string>
+
+    <string name="keep_editing">Keep Editing</string>
+
+    <string name="editor_delete_pet_successful">Application deleted</string>
+
+    <string name="editor_delete_pet_failed">Error with deleting application</string>
+
+    <string name="delete_dialog_msg">Delete this application?</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="category_overview">Application Info</string>
+
+    <string name="category_measurement">Measurement</string>
+
+    <string name="hint_orgname">Company Name</string>
+
+    <string name="hint_pos">Position</string>
+
+    <string name="hint_pet_weight">Weight</string>
+
+    <string name="unknown_pos">Position not specified</string>
+
+    <string name="LastUpdatedOn">Last updated on: </string>
+
+    <string name="status">Status: </string>
+
+    <string name="statusTextView">Application Status</string>
+
+    <string name="status_not_specified">Unknown</string>
+
+    <string name="yourApps">Your Applications</string>
+    
+    <string name="alertTitle">Delete all applications?</string>
+
+    <string name="alertMessage">This cannot be undone.</string>
+
+    <string name="yes">Yes</string>
+
+    <string name="id">ID: </string>
+
+</resources>

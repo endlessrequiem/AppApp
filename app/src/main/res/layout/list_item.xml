@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Facebook (#1)"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#4E4E4E"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/postiton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Software Engineer"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="#80868C" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Updated On: 10/14/20"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#80868C"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/appStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/status"
+        android:textStyle="italic" />
+
+</LinearLayout>
