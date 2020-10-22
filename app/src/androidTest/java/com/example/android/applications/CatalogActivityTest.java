@@ -41,4 +41,5 @@ public class CatalogActivityTest {
         onView(anyOf(withText(R.string.action_insert_dummy_data), withId(R.id.action_insert_dummy_data))).perform(click());
 
     }
+
 }

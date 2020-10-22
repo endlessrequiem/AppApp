@@ -144,7 +144,7 @@ public class EditorActivity extends AppCompatActivity implements
             case R.id.action_save:
                 saveApp();
                 Intent intent = new Intent(EditorActivity.this, CatalogActivity.class);
-                finish();
+                //finish();
                 startActivity(intent);
                 return true;
             case R.id.action_delete:
