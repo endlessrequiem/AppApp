@@ -95,15 +95,14 @@ public class CatalogActivity extends AppCompatActivity implements
         Date date = new Date();
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
 
-        for (int i = 0; i < 10; i++) {
-            ContentValues values = new ContentValues();
-            values.put(AppEntry.COLUMN_ORGANIZATION, "Google");
-            values.put(AppEntry.COLUMN_POSITION, "Android Engineer");
-            values.put(AppEntry.COLUMN_DATE, dateFormat.format(date));
-            values.put(AppEntry.COLUMN_STATUS, "Applied");
-            Uri newUri = getContentResolver().insert(AppEntry.CONTENT_URI, values);
+        ContentValues values = new ContentValues();
+        values.put(AppEntry.COLUMN_ORGANIZATION, "Google");
+        values.put(AppEntry.COLUMN_POSITION, "Android Engineer");
+        values.put(AppEntry.COLUMN_DATE, dateFormat.format(date));
+        values.put(AppEntry.COLUMN_STATUS, "Applied");
 
-        }
+        Uri newUri = getContentResolver().insert(AppEntry.CONTENT_URI, values);
+
 
 
     }
