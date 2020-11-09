@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,10 +98,10 @@ public class EditorActivity extends AppCompatActivity implements
             Uri newUri = getContentResolver().insert(AppEntry.CONTENT_URI, values);
 
             if (newUri == null) {
-                Toast.makeText(this, getString(R.string.editor_insert_pet_failed),
+                Toast.makeText(this, getString(R.string.editor_insert_add_failed),
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
+                Toast.makeText(this, getString(R.string.editor_insert_app_successful),
                         Toast.LENGTH_SHORT).show();
             }
         } else {
@@ -110,10 +109,10 @@ public class EditorActivity extends AppCompatActivity implements
             int rowsAffected = getContentResolver().update(mCurrentAppUri, values, null, null);
 
             if (rowsAffected == 0) {
-                Toast.makeText(this, getString(R.string.editor_update_pet_failed),
+                Toast.makeText(this, getString(R.string.editor_update_app_failed),
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, getString(R.string.editor_update_pet_successful),
+                Toast.makeText(this, getString(R.string.editor_update_app_successful),
                         Toast.LENGTH_SHORT).show();
             }
         }
@@ -281,10 +280,10 @@ public class EditorActivity extends AppCompatActivity implements
             int rowsDeleted = getContentResolver().delete(mCurrentAppUri, null, null);
 
             if (rowsDeleted == 0) {
-                Toast.makeText(this, getString(R.string.editor_delete_pet_failed),
+                Toast.makeText(this, getString(R.string.editor_delete_app_failed),
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, getString(R.string.editor_delete_pet_successful),
+                Toast.makeText(this, getString(R.string.editor_delete_app_successful),
                         Toast.LENGTH_SHORT).show();
             }
         }
