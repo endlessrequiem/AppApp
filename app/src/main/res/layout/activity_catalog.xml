@@ -5,7 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatalogActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CatalogActivity"
+    android:id="@+id/layout"
+    >
 
     <ListView
         android:id="@+id/list"
@@ -64,5 +67,6 @@
         android:layout_marginBottom="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"
         android:tint="#FFFFFF"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        />
 </RelativeLayout>
