@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -132,7 +131,7 @@ public class CatalogActivity extends AppCompatActivity implements
                     int rowsDeleted = getContentResolver().delete(AppEntry.CONTENT_URI, null, null);
                     Log.v("CatalogActivity", rowsDeleted + " rows deleted from application database");
                     dialog.dismiss();
-                    looperThread();
+                    snackbarThread();
 
                 }
             }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -151,7 +150,7 @@ public class CatalogActivity extends AppCompatActivity implements
     }
 
     //Multi-threading to run a while loop that makes the FAB disappear while the Snackbar is shown
-    private void looperThread() {
+    private void snackbarThread() {
         final Handler handler= new Handler();
         new Thread(new Runnable() {
             @Override
