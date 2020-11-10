@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
 public final class AppContract {
 
 
-    private AppContract() {}
+    public AppContract() {}
 
     public static final String CONTENT_AUTHORITY = "com.example.android.applications";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
@@ -37,6 +37,10 @@ public final class AppContract {
 
         public final static String COLUMN_STATUS = "status";
 
+    }
+
+    public String getTableName() {
+        return AppEntry.TABLE_NAME;
     }
 
 }

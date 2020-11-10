@@ -71,4 +71,8 @@
 
     <string name="id">ID: </string>
 
+    <string name="emptyDB">Database is Empty!</string>
+
+    <string name="all_apps_deleted">All Application Entries Deleted</string>
+
 </resources>

@@ -10,6 +10,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,7 +27,9 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android.applications.data.AppContract;
 import com.example.android.applications.data.AppContract.AppEntry;
+import com.example.android.applications.data.AppDbHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -42,7 +46,6 @@ public class CatalogActivity extends AppCompatActivity implements
 
     AppCursorAdapter mCursorAdapter;
     Context context;
-
 
 
     @Override
@@ -109,29 +112,40 @@ public class CatalogActivity extends AppCompatActivity implements
 
 
     private void deleteAllApplications() {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-        builder.setTitle(R.string.alertTitle);
-        builder.setMessage(R.string.alertMessage);
-        builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            public void onClick(DialogInterface dialog, int id) {
-                int rowsDeleted = getContentResolver().delete(AppEntry.CONTENT_URI, null, null);
-                Log.v("CatalogActivity", rowsDeleted + " rows deleted from application database");
-                dialog.dismiss();
-                looperThread();
+        AppDbHelper mDbHelper = new AppDbHelper(context);
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+        AppContract tableName = new AppContract();
 
-            }
-        }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if (dialog != null) {
+        Cursor mCursor = database.rawQuery("SELECT * FROM " + tableName.getTableName(), null);
+
+        if(mCursor.getCount() == 0) {
+            Toast.makeText(this, getString(R.string.emptyDB),
+                    Toast.LENGTH_SHORT).show();
+        } else {
+
+            android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+            builder.setTitle(R.string.alertTitle);
+            builder.setMessage(R.string.alertMessage);
+            builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                public void onClick(DialogInterface dialog, int id) {
+                    int rowsDeleted = getContentResolver().delete(AppEntry.CONTENT_URI, null, null);
+                    Log.v("CatalogActivity", rowsDeleted + " rows deleted from application database");
                     dialog.dismiss();
+                    looperThread();
+
                 }
-            }
-        });
+            }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    if (dialog != null) {
+                        dialog.dismiss();
+                    }
+                }
+            });
 
-        android.app.AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
+            android.app.AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
 
 
     }
@@ -143,18 +157,19 @@ public class CatalogActivity extends AppCompatActivity implements
             @Override
             public void run() {
                 final Snackbar confirmDeleteSnackbar = Snackbar.make(findViewById(R.id.fab),
-                        "All Applications Deleted",
+                        getString(R.string.all_apps_deleted),
                         Snackbar.LENGTH_SHORT);
+
                 confirmDeleteSnackbar.show();
 
                 while (confirmDeleteSnackbar.isShown()) {
-                    findViewById(R.id.fab).setVisibility((View.INVISIBLE));
+                    makeFabInvisible();
                 }
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         if (!confirmDeleteSnackbar.isShown()) {
-                            findViewById(R.id.fab).setVisibility(View.VISIBLE);
+                            makeFabVisible();
                         }
                     }
                 });
@@ -210,5 +225,22 @@ public class CatalogActivity extends AppCompatActivity implements
         mCursorAdapter.swapCursor(null);
     }
 
+    public void makeFabInvisible() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                findViewById(R.id.fab).setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
+    public void makeFabVisible() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                findViewById(R.id.fab).setVisibility(View.VISIBLE);
+            }
+        });
+    }
 
 }
