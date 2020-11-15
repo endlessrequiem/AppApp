@@ -1,5 +1,5 @@
 
-package com.example.android.applications;
+package app.app;
 
 import android.app.LoaderManager;
 import android.content.ContentUris;
@@ -26,9 +26,11 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.android.applications.data.AppContract;
-import com.example.android.applications.data.AppContract.AppEntry;
-import com.example.android.applications.data.AppDbHelper;
+import app.app.data.AppContract;
+import app.app.data.AppContract.AppEntry;
+import app.app.data.AppDbHelper;
+
+import app.app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

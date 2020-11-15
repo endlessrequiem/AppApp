@@ -1,5 +1,5 @@
 
-package com.example.android.applications;
+package app.app;
 
 import android.app.AlertDialog;
 import android.app.LoaderManager;
@@ -21,7 +21,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
-import com.example.android.applications.data.AppContract.AppEntry;
+import app.app.R;
+
+import app.app.data.AppContract.AppEntry;
 
 import java.text.DateFormat;
 import java.util.Date;

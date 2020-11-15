@@ -1,5 +1,5 @@
 
-package com.example.android.applications.data;
+package app.app.data;
 
 import android.net.Uri;
 import android.content.ContentResolver;

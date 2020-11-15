@@ -1,5 +1,5 @@
 
-package com.example.android.applications.data;
+package app.app.data;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -10,9 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
 
-import com.example.android.applications.data.AppContract.AppEntry;
+import app.app.data.AppContract.AppEntry;
 
-import static com.example.android.applications.data.AppContract.AppEntry.TABLE_NAME;
+import static app.app.data.AppContract.AppEntry.TABLE_NAME;
 
 public class AppProvider extends ContentProvider {
 

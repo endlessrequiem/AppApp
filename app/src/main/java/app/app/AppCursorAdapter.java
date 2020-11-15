@@ -1,21 +1,20 @@
 
-package com.example.android.applications;
+package app.app;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
-import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.android.applications.data.AppContract.AppEntry;
-import com.example.android.applications.data.AppProvider;
+import app.app.R;
+
+import app.app.data.AppContract.AppEntry;
+import app.app.data.AppProvider;
 
 
 public class AppCursorAdapter extends CursorAdapter {

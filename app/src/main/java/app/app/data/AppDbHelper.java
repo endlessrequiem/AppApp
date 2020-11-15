@@ -1,14 +1,11 @@
 
-package com.example.android.applications.data;
+package app.app.data;
 
 import android.content.Context;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.android.applications.data.AppContract.AppEntry;
-
-import static com.example.android.applications.data.AppContract.AppEntry.TABLE_NAME;
+import app.app.data.AppContract.AppEntry;
 
 
 public class AppDbHelper extends SQLiteOpenHelper {
