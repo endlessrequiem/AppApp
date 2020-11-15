@@ -1,11 +1,11 @@
 
-package app.app.data;
+package app.applicationtracker.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import app.app.data.AppContract.AppEntry;
+import app.applicationtracker.data.AppContract.AppEntry;
 
 
 public class AppDbHelper extends SQLiteOpenHelper {

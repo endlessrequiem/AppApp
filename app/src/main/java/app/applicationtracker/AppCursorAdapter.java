@@ -1,5 +1,5 @@
 
-package app.app;
+package app.applicationtracker;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,10 +11,8 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import app.app.R;
-
-import app.app.data.AppContract.AppEntry;
-import app.app.data.AppProvider;
+import app.applicationtracker.data.AppContract.AppEntry;
+import app.applicationtracker.data.AppProvider;
 
 
 public class AppCursorAdapter extends CursorAdapter {

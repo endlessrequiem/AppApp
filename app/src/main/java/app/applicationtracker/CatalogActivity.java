@@ -1,5 +1,5 @@
 
-package app.app;
+package app.applicationtracker;
 
 import android.app.LoaderManager;
 import android.content.ContentUris;
@@ -26,11 +26,10 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.app.data.AppContract;
-import app.app.data.AppContract.AppEntry;
-import app.app.data.AppDbHelper;
+import app.applicationtracker.data.AppContract;
+import app.applicationtracker.data.AppContract.AppEntry;
+import app.applicationtracker.data.AppDbHelper;
 
-import app.app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

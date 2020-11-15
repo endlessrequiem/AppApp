@@ -1,5 +1,5 @@
 
-package app.app.data;
+package app.applicationtracker.data;
 
 import android.net.Uri;
 import android.content.ContentResolver;
