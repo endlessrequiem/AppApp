@@ -30,7 +30,7 @@
         </activity>
         <provider
             android:name="app.applicationtracker.data.AppProvider"
-            android:authorities="com.example.android.app"
+            android:authorities="app.applicationtracker"
             android:exported="false" />
     </application>
 
